@@ -59,7 +59,7 @@ export function useGraph(data, knownRoots) {
         allMetadata.forEach(query => {
             // if could not find metadata
             if (query.status === "error") {
-                const params = query.error.response.data.parameters;
+                const params = query.error.config.params;
                 const value = {
                     id: params.name.toLowerCase(),
                     label: params.name,
